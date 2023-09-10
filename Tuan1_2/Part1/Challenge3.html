@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var scoreD1 = 97,
+            scoreD2 = 112,
+            scoreD3 = 101;
+        var scoreK1 = 109,
+            scoreK2 = 95,
+            scoreK3 = 123;
+        var ave1, ave2;
+
+        //Task 1
+        ave1 = ((scoreD1 + scoreD2 + scoreD3) / 3).toFixed(1);
+        ave2 = ((scoreK1 + scoreK2 + scoreK3) / 3).toFixed(1);
+
+        //Task 2
+        if (ave1 > ave2)
+            console.log("Dolphins is a winner with " + ave1 + "point!");
+        if (ave1 < ave2)
+            console.log("Koalas is a winner with " + ave2 + "point!");
+        if (ave1 == ave2)
+            console.log("Dolphins and Koalas is draw with " + ave1 + "point!");
+
+        //Task 3, 4
+        if (ave1 > ave2 && ave1 >= 100)
+            console.log("Dolphins is a winner with " + ave1 + "point!");
+        else if (ave1 < ave2 && ave2 >= 100)
+            console.log("Koalas is a winner with " + ave2 + "point!");
+        else if (ave1 == ave2 && ave1 >= 100)
+            console.log("Dolphins and Koalas is draw with " + ave1 + "point!");
+        else 
+            console.log("Haven't win team!");
+
+    </script>
+</body>
+
+</html>

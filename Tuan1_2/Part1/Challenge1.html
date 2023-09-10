@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var mass1 = 78;
+        var mass2 = 92;
+        var height1 = 1.69;
+        var height2 = 1.95;
+        var BMI1, BMI2;
+        var markHigherBMI;
+
+        BMI1 = (mass1 / (height1 * height1)).toFixed(1);
+
+        BMI2 = (mass2 / (height2 * height2)).toFixed(1);
+
+        if (BMI1 > BMI2)
+            markHigherBMI = true;
+        else
+        var markHigherBMI = false;
+
+        console.log('Marks weights' + mass1 + 'kg and is ' + height1 + 'm tall. John weights ' + mass2 + 'kg and is ' + height2 + 'm tall');
+    </script>
+</body>
+
+</html>
