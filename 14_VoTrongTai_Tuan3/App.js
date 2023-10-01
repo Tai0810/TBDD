@@ -1,68 +1,80 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import FirstScreen from './FirstScreen';
+import Frame_1a from './Frame_1a';
+import Frame_1b from './Frame_1b';
+import Frame_1c from './Frame_1c';
+import Frame_1d from './Frame_1d';
+import Frame_1e from './Frame_1e';
+import Frame_2a from './Frame_2a';
+import Frame_XMEye from './Frame_XMEye';
 
-export default function App() {
+
+
+const Tab = createBottomTabNavigator();
+
+function MyTabs() {
   return (
-    <LinearGradient colors={["#C7F4F6", "#D1F4F6", "#E5F4F5", "#00CCF9"]} style={{ flex: 1 }}>
-      <View style={styles.container}>
-        <Image
-          source={require("./assets/Ellipse.png")}
-          style={styles.image}
-        ></Image>
-        <Text style={styles.title}>GROW YOUR BUSINESS</Text>
-        <Text style={styles.text}>
-          We will help you to grow your business using online server
-        </Text>
-        <div style={styles.button}>
-          <div style={styles.account}>LOGIN</div>
-          <div style={styles.account}>SIGN UP</div>
-        </div>
-      </View>
-    </LinearGradient>
+    <Tab.Navigator
+      tabBarOptions={{
+        labelStyle: {
+          textAlign: 'center',
+          fontSize: 10,
+          fontWeight: 'bold',
+        },
+      }}>
+      <Tab.Screen
+        name="FirstScreen"
+        component={FirstScreen}
+        options={{ headerShown: false, }}
+      />
+      <Tab.Screen
+        name="Frame_1a"
+        component={Frame_1a}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Frame_1b"
+        component={Frame_1b}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Frame_1c"
+        component={Frame_1c}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Frame_1d"
+        component={Frame_1d}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Frame_1e"
+        component={Frame_1e}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Frame_2a"
+        component={Frame_2a}
+        options={{ headerShown: false, }
+        }
+
+      />
+      <Tab.Screen
+        name="Frame_XMEye"
+        component={Frame_XMEye}
+        options={{ headerShown: false, }
+        }
+      />
+    </Tab.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    maxWidth: 360,
-    marginHorizontal: "auto",
-    alignItems: "center",
-    marginLeft: "auto",
-    marginRight: "auto",
-    textAlign: "center",
-  },
-  image: {
-    width: 140,
-    height: 140,
-    marginTop: 100,
-    marginBottom: 50,
-  },
-  title: {
-    fontSize: 25,
-    fontWeight: 700,
-    maxWidth: 200,
-    textAlign: "center",
-  },
-  text: {
-    fontSize: 15,
-    fontWeight: 700,
-    marginTop: 60,
-    marginBottom: 45,
-    textAlign: "center",
-  },
-  button: {
-    width: "100%",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-around",
-  },
-  account: {
-    backgroundColor: "#E3C000",
-    fontSize: 20,
-    fontWeight: 700,
-    borderRadius: 20,
-    padding: 20,
-    width: 100,
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
+  );
+}
